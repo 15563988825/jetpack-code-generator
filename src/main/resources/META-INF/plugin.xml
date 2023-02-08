@@ -30,29 +30,13 @@
 
         <group id="JetpackComposeUIGroup" text="Group">
             <add-to-group group-id="NewGroup" anchor="first"/>
-
-            <group id="JetpackComposeUi.NewMenu.Arch"
-                   popup="true"
-                   icon="/icons/icon_small.svg"
-                   text="Jetpack Compose UI Arch"
-                   description="Jetpack Compose UI Arch Menu">
                 <action
-                        id="ComposeArch.New"
-                        text="New Feature"
+                        id="ComposeArch.Normal"
+                        text="Compose Model-TOPSCOMM"
                         icon="/icons/action_logo.svg"
-                        description="Creates compose architecture files"
-                        class="com.levinzonr.arch.jetpackcompose.plugin.features.newfeature.ComposeArchAction"/>
-                <action
-                        id="ComposeArch.NewComponent"
-                        text="New UI Component"
-                        icon="/icons/action_logo.svg"
-                        description="Creates compose architecture files"
-                        class="com.levinzonr.arch.jetpackcompose.plugin.features.newcomponent.ComposeComponentAction"/>
+                        description="Creates compose normal files"
+                        class="com.levinzonr.arch.jetpackcompose.plugin.features.newfeature.ComposeArchNormalAction"/>
             </group>
-
-
-        </group>
-
 
     </actions>
 

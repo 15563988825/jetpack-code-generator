@@ -34,15 +34,17 @@ class ComposeArchDialogViewModel(
             PropertyKeys.UseFlowWithLifecycle to flowWithLifecycleEnabled
         )
         val featPackage = if (createFeaturePackage) directory.createSubdirectory(name.lowercase()) else directory
-        val file = generator.generateKt("ComposeContract", "${name}Contract", featPackage, properties)
-        generator.generateKt("ComposeScreen", "${name}Screen", featPackage, properties)
-        generator.generateKt("ComposeViewModel", "${name}ViewModel", featPackage, properties)
-        generator.generateKt("ComposeCoordinator", "${name}Coordinator", featPackage, properties)
-        generator.generateKt("ComposeRoute", "${name}Route", featPackage, properties)
+        val file = generator.generateKt("TESTActivity", "${name}Activity", featPackage, properties)
+        generator.generateKt("TESTViewModel", "${name}ViewModel", featPackage, properties)
+//        val file = generator.generateKt("ComposeContract", "${name}Contract", featPackage, properties)
+//        generator.generateKt("ComposeScreen", "${name}Screen", featPackage, properties)
+//        generator.generateKt("ComposeViewModel", "${name}ViewModel", featPackage, properties)
+//        generator.generateKt("ComposeCoordinator", "${name}Coordinator", featPackage, properties)
+//        generator.generateKt("ComposeRoute", "${name}Route", featPackage, properties)
 
-        if (featPackage.findSubdirectory("components") == null) {
-            featPackage.createSubdirectory("components")
-        }
+//        if (featPackage.findSubdirectory("components") == null) {
+//            featPackage.createSubdirectory("components")
+//        }
 
         editorManager.openFile(file.virtualFile, true)
         scope.launch { successFlow.emit(Unit) }

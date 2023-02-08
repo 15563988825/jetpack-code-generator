@@ -1,0 +1,17 @@
+package ${PACKAGE_NAME}
+
+import android.app.Application
+import com.topscomm.fire.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+
+@HiltViewModel
+class ${NAME}ViewModel @Inject constructor(
+    application: Application,
+) : BaseViewModel(application){
+
+    init {
+        //TODO Viewmodel init code here
+    }
+
+}

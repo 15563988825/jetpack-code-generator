@@ -24,19 +24,7 @@ class ComposeArchDialog(
             row { textField(viewModel::name).focused() }
             row { checkBox("Also create package for the feature", viewModel::createFeaturePackage) }
 
-            noteRow("Creates a set of files for the new Feature.\n" +
-                    " All files will be placed in the package with the same name as the feature")
-
-            hideableRow("Experimental") {
-                checkBox(
-                    text = "Use collectAsStateWithLifecycle",
-                    prop = viewModel::flowWithLifecycleEnabled,
-                    comment = buildString {
-                        appendLine("Collect the flow in the Route component in a lifecycle aware way")
-                        append("Requires opt-in")
-                    })
-            }
-
+            noteRow("创建鼎新通信的ComposeModule创建 Activity+ViewModel")
         }
     }
 

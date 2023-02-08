@@ -1,0 +1,48 @@
+package ${PACKAGE_NAME}
+
+import android.os.Bundle
+import androidx.activity.compose.setContent
+import androidx.activity.viewModels
+import androidx.compose.material.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.tooling.preview.Preview
+import com.topscomm.fire.base.*
+import com.topscomm.fire.base.widgets.*
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class ${NAME}Activity : BaseActivity() {
+
+    val viewModel: ${NAME}ViewModel by viewModels()
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //EventBus.getDefault().register(this)   //USE EventBus
+        initCollector(viewModel)
+        setContent {
+            mainView()
+        }
+    }
+
+    @Preview
+    @Composable
+    fun mainView() {
+        FTheme {
+            Scaffold(topBar = {
+                TopAppBarWithBack(
+                    title = "${NAME}",
+                ) {
+                    finish()
+                }
+            }) { paddingValues ->
+                print(paddingValues)
+                //TODO compose ui here
+            }
+        }
+    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        EventBus.getDefault().unregister(this)   //use eventbus
+//    }
+}
